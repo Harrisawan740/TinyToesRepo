@@ -4,53 +4,115 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@drawable/login1"
     tools:context=".MainMenu">
 
-    <Button
-        android:id="@+id/ViewProfileButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
-        android:text="View Baby Profile"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/ClassifyAudioButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="Classify Baby Cry"
-        android:onClick="ClassifyAudioButtonPressed"
-        app:layout_constraintEnd_toEndOf="@+id/ViewProfileButton"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/ViewProfileButton"
-        app:layout_constraintTop_toBottomOf="@+id/ViewProfileButton" />
-
-    <Button
-        android:id="@+id/DetailButtion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="Enter Daily Details"
-        app:layout_constraintEnd_toEndOf="@+id/ClassifyAudioButton"
-        app:layout_constraintHorizontal_bias="0.666"
-        app:layout_constraintStart_toStartOf="@+id/ClassifyAudioButton"
-        app:layout_constraintTop_toBottomOf="@+id/ClassifyAudioButton" />
-
-    <Button
-        android:id="@+id/StatsButtion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Generate Stats"
+    <ImageView
+        android:id="@+id/Profile_Button"
+        android:layout_width="62dp"
+        android:layout_height="64dp"
+        android:clickable="true"
+        android:onClick="ProfileButtonPressed"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/DetailButtion"
-        app:layout_constraintHorizontal_bias="0.515"
-        app:layout_constraintStart_toStartOf="@+id/DetailButtion"
-        app:layout_constraintTop_toBottomOf="@+id/DetailButtion"
-        app:layout_constraintVertical_bias="0.01999998" />
+        app:layout_constraintEnd_toStartOf="@+id/imageView6"
+        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/img_1"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="70dp"
+        android:layout_height="74dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageView6"
+        app:srcCompat="@drawable/img_2" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="76dp"
+        android:layout_height="77dp"
+        android:clickable="true"
+        android:onClick="ClassifyAudioButtonPressed"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageView5"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/Profile_Button"
+        app:srcCompat="@drawable/cryicon"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/ViewStatsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/main_bg"
+        android:clickable="true"
+        android:drawableLeft="@android:drawable/ic_menu_sort_by_size"
+        android:minHeight="48dp"
+        android:onClick="ViewStatsButtonPressed"
+        android:paddingRight="5dp"
+        android:text="View Statistics"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.499" />
+
+    <TextView
+        android:id="@+id/Givefeedbackbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/main_bg"
+        android:clickable="true"
+        android:drawableLeft="@android:drawable/star_big_off"
+        android:minHeight="48dp"
+        android:onClick="GiveFeedbackButtonPressed"
+        android:paddingRight="5dp"
+        android:text="Give Feedback"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ViewStatsButton" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/main_bg"
+        android:clickable="true"
+        android:drawableLeft="@android:drawable/ic_menu_close_clear_cancel"
+        android:minHeight="48dp"
+        android:onClick="LogoutButtonPressed"
+        android:paddingRight="5dp"
+        android:text="Logout"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Givefeedbackbutton"
+        app:layout_constraintVertical_bias="0.123" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="232dp"
+        android:layout_height="92dp"
+        android:text="Welcome To Tiny Toes"
+        android:textColor="@color/white"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.234"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.215" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

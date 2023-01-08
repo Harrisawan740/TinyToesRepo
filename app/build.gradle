@@ -1,21 +1,41 @@
 plugins {
     id 'com.android.application'
+    id 'com.chaquo.python'
+    id 'org.jetbrains.kotlin.android'
+    id 'com.google.gms.google-services'
 }
 
 android {
     namespace 'com.example.tinytoes'
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
+        ndk{
+            abiFilters "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
+        }
         applicationId "com.example.tinytoes"
         minSdk 26
         targetSdk 32
         versionCode 1
         versionName "1.0"
+        python {
+            version "3.10"
+            buildPython "C:/Users/Harris/AppData/Local/Programs/Python/Python310/python.exe"
+//            buildPython "C:/Users/Harris/AppData/Local/Programs/Python/Python310/python.exe", "3.10"
+            pip{
+                install "pandas"
+                install "numpy"
 
+            }
+
+        }
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-
+    sourceSets {
+        main {
+            python.srcDir "src/main/python"
+        }
+    }
     buildTypes {
         release {
             minifyEnabled false
@@ -26,6 +46,9 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    buildFeatures {
+        mlModelBinding true
+    }
 }
 
 dependencies {
@@ -33,7 +56,18 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'com.google.android.material:material:1.7.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'org.tensorflow:tensorflow-lite-support:0.1.0'
+    implementation 'org.tensorflow:tensorflow-lite-metadata:0.1.0'
+    implementation files('C:\\Users\\Harris\\AndroidStudioProjects\\TinyToes2\\app\\libs\\jlibrosa-1.1.8-SNAPSHOT-javadoc.jar')
+    implementation files('C:\\Users\\Harris\\AndroidStudioProjects\\TinyToes2\\app\\libs\\jlibrosa-1.1.8-SNAPSHOT-jar-with-dependencies.jar')
+    implementation files('D:\\Related to FYP\\TarsosDSP-2.4.1.jar')
+    implementation 'androidx.core:core-ktx:+'
+    implementation 'com.google.firebase:firebase-database:20.1.0'
+    implementation 'com.google.firebase:firebase-auth:21.1.0'
+    implementation 'com.google.firebase:firebase-auth-ktx:21.1.0'
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.4'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+
 }

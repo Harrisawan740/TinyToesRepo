@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "598713258975",
+    "project_id": "tinytoesproject",
+    "storage_bucket": "tinytoesproject.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:598713258975:android:a0b7eb32885f89f8f3aa6a",
+        "android_client_info": {
+          "package_name": "com.example.tinytoes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "598713258975-oatic75oob49b9krf5bab9bf5vucbkjm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKEVs1KnaXISJTwMXruNrkWKgW2ffaztA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "598713258975-oatic75oob49b9krf5bab9bf5vucbkjm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
